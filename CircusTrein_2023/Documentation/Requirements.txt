@@ -1,0 +1,9 @@
+FR-01: Moet verschillende collecties aan dieren van verschillende groottes en eetgewoonlijkheden kunnen verwerken.
+    B-01.1: Moet een lijst van dieren als objecten ontvangen die elk properties grootte en eetgewoonlijkheden hebben.
+     
+     
+FR-02: Moet zo min mogelijk wagons gebruiken.
+    B-02.1: Elke treinwagon kan maximaal 10 punten vervoeren.
+    K-02.1: Vleeseters mogen alleen met andere dieren die groter zijn in dezelfde wagon.
+
+FR-03: Elk klein dier telt voor 1 punt. Middelgrote dieren tellen zijn 3 en grote dieren zijn 5 punten. 

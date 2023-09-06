@@ -1,0 +1,14 @@
+UC-01: dieren sorteren.
+    Samenvatting:   Moet verschillende collecties aan dieren van verschillende groottes 
+                    en eetgewoonlijkheden kunnen verwerken.
+                    Dit moet met zo min mogelijk wagons gebeuren, en vleeseters mogen niet in dezelfde wagon
+                    als een dier van dezelfde grootte of kleiner.
+    Actors:         De directeur van het circus.
+    Aannamen:       De functie word een valide lijst met dieren met grootte en eetgewoonlijkheden gegeven.
+    Scenario:       De actor voert een lijst dieren in, en start de functie. De functie sorteert de dieren op basis
+                    van grootte en wat ze eten, en sorteert ze dan passend in wagons. Deze wagons met hun inhoud word
+                    dan geprint voor de actor.
+    Uitzonderingen: Dieren hebben geen valide properties. Word gevonden bij het sorteren van die dieren.
+                    Functie word geannuleerd en actor word op de hoogte gesteld.
+    Resultaat:      Een lijst met wagons word geprint met in elke wagon een bepaald dier met een bepaalde grootte en
+                    eetgewoonlijkheid.

@@ -1,0 +1,11 @@
+For each carnivore, make 1 wagon and put it in 1 wagon.
+Get all wagons with small carnivores, put as many medium herbivores in each as possible.
+Get all wagons with medium carnivores, put as many large herbivores in each as possible.
+Get all wagons with small carnivores and fill as many as possible with large herbivores.
+
+Make a wagon. 
+check if large herbivore fits, put it in and repeat in same wagon.
+If not, check if medium herbivore fits. If yes, but it in and repeat same wagon. 
+If not, check if small herbivore fits. If yes, but it in and repeat same wagon.
+If not, make a wagon. repeat from line 7.
+
