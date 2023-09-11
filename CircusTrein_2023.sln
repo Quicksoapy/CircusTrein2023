@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircusTrein_2023", "CircusTrein_2023\CircusTrein_2023.csproj", "{36191BD0-FF10-4035-9811-0FA4B0018F22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircusTrein_2023.UnitTests", "CircusTrein_2023.UnitTests\CircusTrein_2023.UnitTests.csproj", "{F759786F-E7C2-480E-A032-253AABD6B9BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{36191BD0-FF10-4035-9811-0FA4B0018F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36191BD0-FF10-4035-9811-0FA4B0018F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36191BD0-FF10-4035-9811-0FA4B0018F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F759786F-E7C2-480E-A032-253AABD6B9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F759786F-E7C2-480E-A032-253AABD6B9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F759786F-E7C2-480E-A032-253AABD6B9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F759786F-E7C2-480E-A032-253AABD6B9BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
