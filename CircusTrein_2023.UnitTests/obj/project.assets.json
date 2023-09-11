@@ -3978,11 +3978,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/maya/RiderProjects/CircusTrein_2023/CircusTrein_2023.UnitTests/CircusTrein_2023.UnitTests.csproj",
+      "projectUniqueName": "/home/maya/RiderProjects/CircusTrein2023/CircusTrein_2023.UnitTests/CircusTrein_2023.UnitTests.csproj",
       "projectName": "CircusTrein_2023.UnitTests",
-      "projectPath": "/home/maya/RiderProjects/CircusTrein_2023/CircusTrein_2023.UnitTests/CircusTrein_2023.UnitTests.csproj",
+      "projectPath": "/home/maya/RiderProjects/CircusTrein2023/CircusTrein_2023.UnitTests/CircusTrein_2023.UnitTests.csproj",
       "packagesPath": "/home/maya/.nuget/packages/",
-      "outputPath": "/home/maya/RiderProjects/CircusTrein_2023/CircusTrein_2023.UnitTests/obj/",
+      "outputPath": "/home/maya/RiderProjects/CircusTrein2023/CircusTrein_2023.UnitTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/maya/.nuget/NuGet/NuGet.Config"
@@ -3997,8 +3997,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/maya/RiderProjects/CircusTrein_2023/CircusTrein_2023/CircusTrein_2023.csproj": {
-              "projectPath": "/home/maya/RiderProjects/CircusTrein_2023/CircusTrein_2023/CircusTrein_2023.csproj"
+            "/home/maya/RiderProjects/CircusTrein2023/CircusTrein_2023/CircusTrein_2023.csproj": {
+              "projectPath": "/home/maya/RiderProjects/CircusTrein2023/CircusTrein_2023/CircusTrein_2023.csproj"
             }
           }
         }
@@ -4045,12 +4045,22 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.8, 7.0.8]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.8, 7.0.8]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.305/RuntimeIdentifierGraph.json"
       }
     }
   }

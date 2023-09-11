@@ -89,7 +89,7 @@ public class Tests
         List<Animal> smallHerbivores = new List<Animal>
         {
             new Animal(Appetite.Herbivore, Size.Small)
-        };
+        };   
         List<Animal> carnivores = new List<Animal>
         {
             new Animal(Appetite.Carnivore, Size.Small),
