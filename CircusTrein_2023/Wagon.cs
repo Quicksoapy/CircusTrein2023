@@ -19,8 +19,8 @@ public class Wagon
         {
             foreach (var obj in Animals)
             {
-                if (obj.Size > animal.Size) continue;
-                Console.WriteLine("Animal" + animal.Size + " "+ animal.Appetite + " is carnivore and not all animals are bigger.");
+                if (obj.Size < animal.Size) continue;
+                Console.WriteLine("Animal " + animal.Size + " "+ animal.Appetite + " is carnivore and not all animals are bigger.");
                 return;
             }
         }

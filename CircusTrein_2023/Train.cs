@@ -32,8 +32,8 @@ public class Train
                                 MediumHerbivores.Remove(mediumHerbivore1);
                             }
                         }
-
-                        wagons.Add(wagon);
+                        
+                        wagons[j] = wagon;
                         break;
                     case 2:
                         for (int i = 0; i < 2; i++)
@@ -46,7 +46,7 @@ public class Train
                             }
                         }
 
-                        wagons.Add(wagon);
+                        wagons[j] = wagon;
                         break;
                     case 1:
                         var mediumHerbivore3 = MediumHerbivores.FirstOrDefault();
@@ -56,7 +56,7 @@ public class Train
                             MediumHerbivores.Remove(mediumHerbivore3);
                         }
 
-                        wagons.Add(wagon);
+                        wagons[j] = wagon;
                         break;
                 }
             }
@@ -75,8 +75,8 @@ public class Train
                     wagon.AddAnimal(largeHerbivore);
                     LargeHerbivores.Remove(largeHerbivore);
                 }
-                //TODO: wagon gets added infinitely here
-                wagons.Add(wagon);
+
+                wagons[j] = wagon;
             }
         };
 
@@ -94,52 +94,98 @@ public class Train
                     LargeHerbivores.Remove(largeHerbivore);
                 }
 
-                wagons.Add(wagon);
+                wagons[j] = wagon;
             }
         };
-
-        //5. Make a wagon. 
-        Wagon wagon1 = new Wagon();
         
-        //6. check if large herbivore fits, put it in and repeat in same wagon.
         for (int i = 0; i < LargeHerbivores.Count; i++)
         {
+            //5. Make a wagon. 
+            Wagon wagon1 = new Wagon();
+            
+            //6. check if large herbivore fits, put it in and repeat in same wagon.
             var largeHerbivore = LargeHerbivores[i];
-            if (wagon1.PointsLeft > 4)
+            while (wagon1.PointsLeft > 4)
             {
                 wagon1.AddAnimal(largeHerbivore);
                 LargeHerbivores.Remove(largeHerbivore);
-                continue;
             }
+
             //7. If not, check if medium herbivore fits. If yes, but it in and repeat same wagon. 
             foreach (var mediumHerbivore in MediumHerbivores)
             {
-                if (wagon1.PointsLeft > 2)
+                while (wagon1.PointsLeft > 2)
                 {
                     wagon1.AddAnimal(mediumHerbivore);
-                    LargeHerbivores.Remove(mediumHerbivore);
-                    continue;
+                    MediumHerbivores.Remove(mediumHerbivore);
                 }
 
                 //8. If not, check if small herbivore fits. If yes, but it in and repeat same wagon.
                 foreach (var smallHerbivore in SmallHerbivores)
                 {
-                    if (wagon1.PointsLeft > 0)
+                    while (wagon1.PointsLeft > 0)
                     {
-                        wagon1.AddAnimal(largeHerbivore);
-                        LargeHerbivores.Remove(largeHerbivore);
-                        continue;
+                        wagon1.AddAnimal(smallHerbivore);
+                        SmallHerbivores.Remove(smallHerbivore);
                     }
                 }
             }
             
-            wagon1 = new Wagon();
             wagon1.AddAnimal(largeHerbivore);
             LargeHerbivores.Remove(largeHerbivore);
-            
+            wagons.Add(wagon1);
             //9. If not, make a wagon. repeat from line 7.
         }
 
+        for (int i = 0; i < MediumHerbivores.Count; i++)
+        {
+            //5. Make a wagon. 
+            Wagon wagon1 = new Wagon();
+
+            //7. If not, check if medium herbivore fits. If yes, but it in and repeat same wagon. 
+            foreach (var mediumHerbivore in MediumHerbivores)
+            {
+                while (wagon1.PointsLeft > 2)
+                {
+                    wagon1.AddAnimal(mediumHerbivore);
+                    MediumHerbivores.Remove(mediumHerbivore);
+                }
+
+                //8. If not, check if small herbivore fits. If yes, but it in and repeat same wagon.
+                foreach (var smallHerbivore in SmallHerbivores)
+                {
+                    while (wagon1.PointsLeft > 0)
+                    {
+                        wagon1.AddAnimal(smallHerbivore);
+                        SmallHerbivores.Remove(smallHerbivore);
+                    }
+                }
+            }
+            
+            wagons.Add(wagon1);
+            //9. If not, make a wagon. repeat from line 7.
+        }
+        
+        for (int i = 0; i < SmallHerbivores.Count; i++)
+        {
+            //5. Make a wagon. 
+            Wagon wagon1 = new Wagon();
+            
+            //8. If not, check if small herbivore fits. If yes, but it in and repeat same wagon.
+            
+            foreach (var smallHerbivore in SmallHerbivores)
+            {
+                while (wagon1.PointsLeft > 0)
+                {
+                    wagon1.AddAnimal(smallHerbivore);
+                    SmallHerbivores.Remove(smallHerbivore);
+                }
+            }
+            
+            wagons.Add(wagon1);
+            //9. If not, make a wagon. repeat from line 7.
+        }
+        
         return wagons;
     }
     
