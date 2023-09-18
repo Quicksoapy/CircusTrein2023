@@ -9,7 +9,7 @@ public class Train
         foreach (var carnivore in Carnivores)
         {
             var wagon = new Wagon();
-            wagon.AddAnimal(carnivore);
+            wagon.TryAddAnimal(carnivore);
             wagons.Add(wagon);
         }
         
@@ -28,7 +28,8 @@ public class Train
                             var mediumHerbivore1 = MediumHerbivores.FirstOrDefault();
                             if (mediumHerbivore1 != null)
                             {
-                                wagon.AddAnimal(mediumHerbivore1);
+                                //TODO TryAddAnimal (tryparse) loop through animals, try add 
+                                wagon.TryAddAnimal(mediumHerbivore1);
                                 MediumHerbivores.Remove(mediumHerbivore1);
                             }
                         }
@@ -41,7 +42,7 @@ public class Train
                             var mediumHerbivore2 = MediumHerbivores.FirstOrDefault();
                             if (mediumHerbivore2 != null)
                             {
-                                wagon.AddAnimal(mediumHerbivore2);
+                                wagon.TryAddAnimal(mediumHerbivore2);
                                 MediumHerbivores.Remove(mediumHerbivore2);
                             }
                         }
@@ -52,7 +53,7 @@ public class Train
                         var mediumHerbivore3 = MediumHerbivores.FirstOrDefault();
                         if (mediumHerbivore3 != null)
                         {
-                            wagon.AddAnimal(mediumHerbivore3);
+                            wagon.TryAddAnimal(mediumHerbivore3);
                             MediumHerbivores.Remove(mediumHerbivore3);
                         }
 
@@ -72,7 +73,7 @@ public class Train
                 var largeHerbivore = LargeHerbivores.FirstOrDefault();
                 if (largeHerbivore != null)
                 {
-                    wagon.AddAnimal(largeHerbivore);
+                    wagon.TryAddAnimal(largeHerbivore);
                     LargeHerbivores.Remove(largeHerbivore);
                 }
 
@@ -90,7 +91,7 @@ public class Train
                 var largeHerbivore = LargeHerbivores.FirstOrDefault();
                 if (largeHerbivore != null)
                 {
-                    wagon.AddAnimal(largeHerbivore);
+                    wagon.TryAddAnimal(largeHerbivore);
                     LargeHerbivores.Remove(largeHerbivore);
                 }
 
@@ -107,7 +108,7 @@ public class Train
             var largeHerbivore = LargeHerbivores[i];
             while (wagon1.PointsLeft > 4)
             {
-                wagon1.AddAnimal(largeHerbivore);
+                wagon1.TryAddAnimal(largeHerbivore);
                 LargeHerbivores.Remove(largeHerbivore);
             }
 
@@ -116,7 +117,7 @@ public class Train
             {
                 while (wagon1.PointsLeft > 2)
                 {
-                    wagon1.AddAnimal(mediumHerbivore);
+                    wagon1.TryAddAnimal(mediumHerbivore);
                     MediumHerbivores.Remove(mediumHerbivore);
                 }
 
@@ -125,13 +126,13 @@ public class Train
                 {
                     while (wagon1.PointsLeft > 0)
                     {
-                        wagon1.AddAnimal(smallHerbivore);
+                        wagon1.TryAddAnimal(smallHerbivore);
                         SmallHerbivores.Remove(smallHerbivore);
                     }
                 }
             }
             
-            wagon1.AddAnimal(largeHerbivore);
+            wagon1.TryAddAnimal(largeHerbivore);
             LargeHerbivores.Remove(largeHerbivore);
             wagons.Add(wagon1);
             //9. If not, make a wagon. repeat from line 7.
@@ -147,7 +148,7 @@ public class Train
             {
                 while (wagon1.PointsLeft > 2)
                 {
-                    wagon1.AddAnimal(mediumHerbivore);
+                    wagon1.TryAddAnimal(mediumHerbivore);
                     MediumHerbivores.Remove(mediumHerbivore);
                 }
 
@@ -156,7 +157,7 @@ public class Train
                 {
                     while (wagon1.PointsLeft > 0)
                     {
-                        wagon1.AddAnimal(smallHerbivore);
+                        wagon1.TryAddAnimal(smallHerbivore);
                         SmallHerbivores.Remove(smallHerbivore);
                     }
                 }
@@ -177,7 +178,7 @@ public class Train
             {
                 while (wagon1.PointsLeft > 0)
                 {
-                    wagon1.AddAnimal(smallHerbivore);
+                    wagon1.TryAddAnimal(smallHerbivore);
                     SmallHerbivores.Remove(smallHerbivore);
                 }
             }
