@@ -4,18 +4,19 @@ var train = new Train();
 var generator = new Generator();
 var animals = generator.GenerateAnimalList(100, new Random());
 
-List<Animal> SmallHerbivores = new List<Animal>();
-List<Animal> MediumHerbivores = new List<Animal>();
-List<Animal> LargeHerbivores = new List<Animal>();
-List<Animal> Carnivores = new List<Animal>();
+List<Animal> herbivores = new List<Animal>();
+List<Animal> carnivores = new List<Animal>();
 int wagonCount = 1;
 
 foreach (var animal in animals)
 {
     if (animal.Appetite == Appetite.Carnivore)
     {
-        Carnivores.Add(animal);
+        carnivores.Add(animal);
+        continue;
     }
+    herbivores.Add(animal);
+    /*
     switch (animal.Size)
     {
         case Size.Small:
@@ -30,9 +31,10 @@ foreach (var animal in animals)
         default:
             throw new ArgumentOutOfRangeException();
     }
+    */
 }
 
-var wagons = train.Sorter(LargeHerbivores, MediumHerbivores, SmallHerbivores, Carnivores);
+var wagons = train.Sorter(herbivores, carnivores);
 
 foreach (var wagon in wagons)
 {

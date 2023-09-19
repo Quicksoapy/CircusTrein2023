@@ -25,6 +25,20 @@ public class Tests
     public void SortTester1()
     {
         var train = new Train();
+        var herbivores = new List<Animal>
+        {
+            new Animal(Appetite.Herbivore, Size.Large),
+            new Animal(Appetite.Herbivore, Size.Large),
+            new Animal(Appetite.Herbivore, Size.Medium), 
+            new Animal(Appetite.Herbivore, Size.Medium), 
+            new Animal(Appetite.Herbivore, Size.Medium) 
+
+        };
+        var carnivores = new List<Animal>
+        {
+            new Animal(Appetite.Carnivore, Size.Small)
+        };
+        /*
         List<Animal> largeHerbivores = new List<Animal>
         {
             new Animal(Appetite.Herbivore, Size.Large),
@@ -41,7 +55,9 @@ public class Tests
         {
             new Animal(Appetite.Carnivore, Size.Small)
         };
-        var output = train.Sorter(largeHerbivores, mediumHerbivores, smallHerbivores, carnivores);
+        */
+        
+        var output = train.Sorter(herbivores, carnivores);
         Assert.That(output.Count == 2);
     }
     
@@ -70,7 +86,19 @@ public class Tests
         {
             new Animal(Appetite.Carnivore, Size.Small)
         };
-        var output = train.Sorter(largeHerbivores, mediumHerbivores, smallHerbivores, carnivores);
+        var herbivores = new List<Animal>();
+        foreach (var largeHerbivore in largeHerbivores)
+        {
+            herbivores.Add(largeHerbivore);
+        }
+        foreach (var mediumHerbivore in mediumHerbivores)
+        {
+            herbivores.Add(mediumHerbivore);
+        }foreach (var smallHerbivore in smallHerbivores)
+        {
+            herbivores.Add(smallHerbivore);
+        }
+        var output = train.Sorter(herbivores, carnivores);
         Assert.That(output.Count == 2);
     }
     
@@ -96,7 +124,19 @@ public class Tests
             new Animal(Appetite.Carnivore, Size.Medium),
             new Animal(Appetite.Carnivore, Size.Large)
         };
-        var output = train.Sorter(largeHerbivores, mediumHerbivores, smallHerbivores, carnivores);
+        var herbivores = new List<Animal>();
+        foreach (var largeHerbivore in largeHerbivores)
+        {
+            herbivores.Add(largeHerbivore);
+        }
+        foreach (var mediumHerbivore in mediumHerbivores)
+        {
+            herbivores.Add(mediumHerbivore);
+        }foreach (var smallHerbivore in smallHerbivores)
+        {
+            herbivores.Add(smallHerbivore);
+        }
+        var output = train.Sorter(herbivores, carnivores);
         Assert.That(output.Count == 4);
     }
     
@@ -127,8 +167,19 @@ public class Tests
             new Animal(Appetite.Carnivore, Size.Medium),
             new Animal(Appetite.Carnivore, Size.Large)
         };
-        var output = train.Sorter(largeHerbivores, mediumHerbivores, smallHerbivores, carnivores);
-        Assert.That(output.Count == 5);
+        var herbivores = new List<Animal>();
+        foreach (var largeHerbivore in largeHerbivores)
+        {
+            herbivores.Add(largeHerbivore);
+        }
+        foreach (var mediumHerbivore in mediumHerbivores)
+        {
+            herbivores.Add(mediumHerbivore);
+        }foreach (var smallHerbivore in smallHerbivores)
+        {
+            herbivores.Add(smallHerbivore);
+        }
+        var output = train.Sorter(herbivores, carnivores);        Assert.That(output.Count == 5);
     }
     
     [Test]
@@ -152,8 +203,19 @@ public class Tests
         {
             new Animal(Appetite.Carnivore, Size.Small)
         };
-        var output = train.Sorter(largeHerbivores, mediumHerbivores, smallHerbivores, carnivores);
-        Assert.That(output.Count == 2);
+        var herbivores = new List<Animal>();
+        foreach (var largeHerbivore in largeHerbivores)
+        {
+            herbivores.Add(largeHerbivore);
+        }
+        foreach (var mediumHerbivore in mediumHerbivores)
+        {
+            herbivores.Add(mediumHerbivore);
+        }foreach (var smallHerbivore in smallHerbivores)
+        {
+            herbivores.Add(smallHerbivore);
+        }
+        var output = train.Sorter(herbivores, carnivores);        Assert.That(output.Count == 2);
     }
     
     [Test]
@@ -181,8 +243,19 @@ public class Tests
             new Animal(Appetite.Carnivore, Size.Small),
             new Animal(Appetite.Carnivore, Size.Small)
         };
-        var output = train.Sorter(largeHerbivores, mediumHerbivores, smallHerbivores, carnivores);
-        Assert.That(output.Count == 3);
+        var herbivores = new List<Animal>();
+        foreach (var largeHerbivore in largeHerbivores)
+        {
+            herbivores.Add(largeHerbivore);
+        }
+        foreach (var mediumHerbivore in mediumHerbivores)
+        {
+            herbivores.Add(mediumHerbivore);
+        }foreach (var smallHerbivore in smallHerbivores)
+        {
+            herbivores.Add(smallHerbivore);
+        }
+        var output = train.Sorter(herbivores, carnivores);        Assert.That(output.Count == 3);
     }
     [Test]
     public void SortTester7()
@@ -225,7 +298,18 @@ public class Tests
             new Animal(Appetite.Carnivore, Size.Large),
             new Animal(Appetite.Carnivore, Size.Large)
         };
-        var output = train.Sorter(largeHerbivores, mediumHerbivores, smallHerbivores, carnivores);
-        Assert.That(output.Count == 13);
+        var herbivores = new List<Animal>();
+        foreach (var largeHerbivore in largeHerbivores)
+        {
+            herbivores.Add(largeHerbivore);
+        }
+        foreach (var mediumHerbivore in mediumHerbivores)
+        {
+            herbivores.Add(mediumHerbivore);
+        }foreach (var smallHerbivore in smallHerbivores)
+        {
+            herbivores.Add(smallHerbivore);
+        }
+        var output = train.Sorter(herbivores, carnivores);        Assert.That(output.Count == 13);
     }
 }

@@ -3,6 +3,35 @@ namespace CircusTrein_2023;
 public class Train
 {
     private List<Wagon> wagons = new List<Wagon>();
+
+    public List<Wagon> Sorter(List<Animal> herbivores,
+        List<Animal> carnivores)
+    {
+        foreach (var carnivore in carnivores)
+        {
+            var wagon = new Wagon();
+            wagon.TryAddAnimal(carnivore);
+            wagons.Add(wagon);
+        }
+
+        foreach (var herbivore in herbivores)
+        {
+            foreach (var wagon in wagons)
+            {
+                wagon.TryAddAnimal(herbivore);
+                continue;
+            }
+
+            if (herbivores.IndexOf(herbivore) != herbivores.Count - 1) {
+                var wagon2 = new Wagon();
+                wagons.Add(wagon2);
+            }
+            
+        }
+        return wagons;
+    }
+    
+    /*
     public List<Wagon> Sorter(List<Animal> LargeHerbivores, List<Animal> MediumHerbivores, List<Animal> SmallHerbivores, List<Animal> Carnivores)
     {
         //1. For each carnivore, make 1 wagon and put it in 1 wagon.
@@ -189,5 +218,5 @@ public class Train
         
         return wagons;
     }
-    
+    */
 }
